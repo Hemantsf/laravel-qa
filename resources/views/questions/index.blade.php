@@ -11,7 +11,13 @@
                 @foreach($questions as  $row)
                 <div class="media">
                 <div class="media-body">
-                <h3 class="mt-0">{{ $row->title }}</h3>
+                <h3 class="mt-0"><a href ="{{ $row->url }}">{{ $row->title }}</h3></a>
+                <p class="lead">
+                Asked by
+                <a href ="{{ $row->user->url }}"> {{ $row->user->name }} </a>
+                <small class="text-muted">{{ $row->created_at }} </small>
+                </p>
+                
                 {{ str_limit($row->body,250) }}
                 
                 </div>
