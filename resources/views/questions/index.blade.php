@@ -5,7 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">All Questions</div>
+                
+                
+                <div class="card-header">
+                <div class="d-flex align-items-center">
+                <h2>All Questions</h2>
+                <div class="ml-auto">
+                <a href="{{ route('questions.create') }}" class="btn btn-outline-secondary">Ask Question</a>                
+                </div>
+                </div>                
+                </div>
 
                 <div class="card-body">
                 @foreach($questions as  $row)
@@ -20,8 +29,11 @@
                 <div class="view">
                 {{  $row->views ." " . str_plural ('view',  $row->views) }}
                 </div>
-                
                 </div>
+
+
+
+
                 <div class="media-body">
                 <h3 class="mt-0"><a href ="{{ $row->url }}">{{ $row->title }}</h3></a>
                 <p class="lead">
