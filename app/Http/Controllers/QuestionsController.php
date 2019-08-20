@@ -63,7 +63,7 @@ class QuestionsController extends Controller
      */
     public function edit(Questions $questions)
     {
-        //
+        return view("questions.edit" , compact('questions'));
     }
 
     /**
@@ -75,7 +75,8 @@ class QuestionsController extends Controller
      */
     public function update(Request $request, Questions $questions)
     {
-        //
+        $questions->update($request->only('title' , 'body'));
+        return redirect('/questions')-with('success', "Your Question Has been Updated");
     }
 
     /**

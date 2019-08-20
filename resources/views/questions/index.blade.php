@@ -33,11 +33,14 @@
                 </div>
                 </div>
 
-
-
-
                 <div class="media-body">
+                <div class="d-flex align-items-center">                
                 <h3 class="mt-0"><a href ="{{ $row->url }}">{{ $row->title }}</h3></a>
+                <div class="ml-auto">
+                <a href="{{ route('questions.edit', $row->id )}}"  class="btn btn-sm btn-outline-info">Edit</a>
+                </div>
+                </div>
+                
                 <p class="lead">
                 Asked by
                 <a href ="{{ $row->user->url }}"> {{ $row->user->name }} </a>
