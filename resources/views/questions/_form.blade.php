@@ -2,7 +2,6 @@
                     <div class="form-group">
                     <label for="question-title">Question Title</label>
                     <input type="text" name="title" value="{{old('title')}}" id="question-title" class="form-control{{ $errors->has('title') ? 'is-invalid' : '' }} ">
-
                     @if($errors->has('title'))
                     <div class="invalid-feedback">
                     <strong>{{ $errors->first('title') }}</strong>
