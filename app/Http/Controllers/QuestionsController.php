@@ -52,7 +52,8 @@ class QuestionsController extends Controller
      */
     public function show(Question $question)
     {
-        return view("questions.edit" , compact('question'));
+        $question->increment('views');
+        return view("questions.show" , compact('question'));
     }
 
     /**
